@@ -52,7 +52,9 @@ services:
       - kestra_data:/app/storage
       - /var/run/docker.sock:/var/run/docker.sock
       - kestra_tmp:/tmp/kestra-wd
+      - ~/.config/gcloud:/home/kestra/.config/gcloud:ro
     environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /home/kestra/.config/gcloud/application_default_credentials.json
       KESTRA_CONFIGURATION: |
         datasources:
           postgres:
@@ -77,6 +79,7 @@ services:
             tmpDir:
               path: /tmp/kestra-wd/tmp
           url: http://localhost:8080/
+
     ports:
       - "8080:8080"
       - "8081:8081"
