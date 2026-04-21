@@ -59,5 +59,5 @@ FROM `kestra-sandbox-492709.zoomcamp.yellow_tripdata_2021_03`
 
 ## Question 6
 
-**Answer:** `Yorkville West`
+**Answer:** Add a `timezone` property set to `America/New York` in the schedule trigger configuration.
 
